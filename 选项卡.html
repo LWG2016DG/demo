@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function(){
+            var input = document.getElementsByTagName("input")
+            var div = document.querySelectorAll('div');
+
+            for(var i =0 ;i<input.length;i++){
+                input[i].index = i ;
+                input[i].onclick = function(){
+                    for(var i =0 ;i<input.length;i++){
+                        input[i].style.background = ''
+                        div[i].style.display='none';
+                    }
+                    this.style.background ='cyan';
+                    div[this.index].style.display = 'block'
+                }
+
+            }
+
+
+
+
+
+
+        }
+    </script>
+    <style>
+        div{
+         width: 300px;
+            height: 100px;
+            border: 1px solid black;
+           display: none;
+        };
+
+
+        .1{
+               background:cyan ;
+        }                                                                                                                   
+    </style>
+</head>
+<body>
+<input type="button" value="选项1" class="1">                                                         
+<input type="button" value="选项2">                   
+<input type="button" value="选项3" >``
+
+<div style="display: block">1</div>``````````````
+<div>2</div>
+<div>3</div>
+<div>
+    kkk
+</div>
+<ul></ul>
+
+
+</body>
+</html>

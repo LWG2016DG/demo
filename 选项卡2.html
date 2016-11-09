@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function(){
+            var input = document.querySelectorAll('input');
+            var div = document.querySelectorAll('div');
+            var last = input[0]
+            for(var i =0 ;i<input.length;i++){
+                input[i].index = i ;
+                input[i].onclick = function(){
+                    last.style.background = ''
+                    div[last.index].style.display = 'none'
+                    this.style.background ='cyan';
+                    div[this.index].style.display = 'block'
+                         last = this
+                }
+
+            }
+
+
+
+
+        }
+    </script>
+    <style>
+        div{
+            width: 300px;
+            height: 100px;
+            border: 1px solid black;
+            display: none;
+        }
+
+
+        .1{
+
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="选项1" style="background: cyan">
+<input type="button" value="选项2">
+<input type="button" value="选项3" >
+
+<div style="display: block">1</div>
+<div>2</div>
+<div>3</div>
+
+</body>
+</html>
+</html>
