@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+#big{
+    border: 2px solid cadetblue;
+    width: 400px;
+    height: 255px;
+    float: left;
+    overflow: hidden;
+}
+#small{
+
+    position: absolute;
+    top: 0;
+    left: 460px;
+    width:400px;
+    height: 300px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    z-index: 1;;
+    display: none;
+    transition:dispaly 0.5s;
+
+
+        }
+        #box{
+            background-color: aqua;
+            opacity: 0.3;
+            width: 160px;
+            height: 120px;
+            left:0 ;
+            top:0 ;
+            position: absolute;
+        }
+#small img{
+    position: absolute;
+    z-index: 5
+}
+
+    </style>
+    <script>
+        window.onload=function(){
+            var demo = document.getElementById("demo");
+            var box=document.getElementById("box")
+            var big=document.getElementById("big")
+            var small=document.getElementById("small")
+            var img1=box.getElementsByTagName("img")
+            var box1=document.getElementById("box1")
+            var img5=document.getElementById("5")
+            big.onmouseover=function(){
+                box.style.display="block"
+                small.style.display="block"
+
+            }
+            big.onmouseout=function(){
+                box.style.display="none"
+                small.style.display="none"
+
+            }
+            big.onmousemove=function(ev){
+                var _event=ev||window.event;
+//                var left = _event.clientX-demo.offsetLeft-big.offsetLeft-box.offsetLeft/2;
+//                var top =  _event.clientY-demo.offsetTop-big.offsetTop-box.offsetTop/2;
+                var left=_event.clientX-box.clientWidth/2
+                var top=_event.clientY-box.clientWidth/2
+
+
+                if (left<0)
+                left=0
+                else    if(left>big.offsetWidth-box.offsetWidth)
+                {
+                    left=big.offsetWidth-box.offsetWidth
+
+
+                }
+                if(top<0)
+                top=0
+                else
+                if(top>big.offsetHeight-box.offsetHeight){
+                    top=big.offsetHeight-box.offsetHeight
+                }
+
+
+
+
+                box.style.left=left+"px";
+                box.style.top=top+"px";
+                var percentX = left / (big.offsetWidth - box.offsetWidth);
+                var percentY = top / (big.offsetHeight - box.offsetHeight);
+              img5.style.left=-percentX*(img5.offsetWidth - small.offsetWidth)+"px"
+                img5.style.top=-percentY*(img5.offsetHeight - small.offsetHeight)+"px"
+
+            }
+
+
+        }
+    </script>
+</head>
+<body>
+<div id="demo">
+    <div id="big">
+        <div id="box">  </div>
+        <img  src="macbook-small.jpg">
+    </div>
+    <div id="small">
+
+        <img src="macbook-big.jpg"id="5" >
+    </div>
+
+</div>
+</body>
+</html>
