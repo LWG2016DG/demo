@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html >
+	<head>
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="format-detection" content="telephone=no">
+        <link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/font-awesome.css">
+		<style type="text/css">
+            html{
+                width: 100%;
+                height: 100%;
+                overflow-x: hidden;
+            }
+            body{
+                text-align: left;
+                width: 100%;
+                overflow: hidden;
+                background: #e9dfc7;
+                transition:2s ;
+
+            }
+            .m-read-content{
+                font-size: 14px;
+                color: #555;
+                line-height: 31px;
+                padding: 15px;
+            }
+            .m-read-content h4{
+                font-size: 20px;
+                color: #736357;
+                border-bottom: solid 1px #736357;
+                letter-spacing: 2px;
+                margin: 0 0 1em 0;
+            }
+            .m-read-content p{
+                text-indent: 2em;
+                margin: 0.5em 0;
+                letter-spacing: 0px;
+            }
+            .u-tab{
+                height: 34px;
+                margin: 10px auto;
+                line-height: 34px;
+                border-radius: 8px;
+                border: 1px solid #858382;
+                font-size: 12px;
+                background: black;
+                opacity: 0.9;
+            }
+            .u-tab li{
+                display: inline-block;
+                width: 49%;
+                border-right:1px solid ;
+                text-align: center;
+
+            }
+            .u-tab li:nth-child(2){
+                border-right:0px solid ;
+            }
+            .m-button-bar{
+                width: 70%;
+                max-width: 800px;
+                padding: 5px;
+                margin: 10px auto;
+                color: white;
+
+            }
+            .top-nav{
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 50px;
+                width: 100%;
+                z-index: 9999;
+                background: #000;
+                opacity: 0.8;
+                display: none;
+            }
+            .icon-back{
+                position: absolute;
+                top: 30%;
+                left: 10px;
+                color: white;
+            }
+            .nav-top{
+                position: absolute;
+                top: 30%;
+                left: 30px;
+                color: white;
+            }
+        .bottom-nav{
+            width: 100%;
+            height: 80px;
+            position: fixed;
+            bottom: 0;
+            background: black;
+            left: 0;
+            color: white;
+            z-index: 9999;
+            opacity: 0.9;
+            display: none;
+        }
+            .navc div{
+                float: left;
+                text-align: center;
+                font-size: 30px;
+                margin-left: 20%;
+            }
+
+            .navc{
+                width: 60%;
+                position: absolute;
+                top:30%;
+                left:15%;
+                margin: 0 auto;
+
+            }
+            .navc p{
+                line-height: 30px;
+                font-size: 14px;
+            }
+            .nav-pannel-bk{
+                position: fixed;
+                bottom: 80px;
+                height: 135px;
+                width: 100%;
+                background: #000;
+                opacity: 0.9;
+                z-index: 10000;
+                left: 0;
+                display: none;
+            }
+            .nav-pannel{
+                position: fixed;
+                bottom: 80px;
+                height: 135px;
+                width: 100%;
+                background: none;
+                color: white;
+                z-index: 11111;
+                left: 0;
+                display: none;
+            }
+            .child-mod{
+                padding: 5px 10px;
+                margin: 15px;
+            }
+            .child-mod span{
+                display: inline-block;
+                padding-right:20px ;
+                padding-left: 10px;
+            }
+            .font-size{
+                background: black;
+                border-radius:16px ;
+               padding: 5px 40px;
+                border: 1px solid #fff;
+            }
+            .child-mod :nth-child(3){
+                margin-left: 20px;
+            }
+            .bk-container-current{
+                width: 32px;
+                height: 32px;
+                border-radius: 16px;
+
+                position: absolute;
+                top: -2px;
+                left: -1px;
+
+            }
+            .bk-contaniner{
+                position: relative;
+                width: 30px;
+                height: 30px;
+                border-radius: 15px;
+                background: #fff;
+                display: inline-block;
+                vertical-align:-6px ;
+                margin-left: 20px;
+            }
+            .black{
+                background: #000;
+                color: white;
+                transition:2s ;
+            }
+            .large5{
+                font-size: 16px;
+                color: #555;
+                line-height: 31px;
+                padding: 15px;
+                transition: 1s;
+            }
+             .boder{
+                 border: 1px solid  #ff7800;
+             }
+
+		</style>
+	</head>
+	<body>
+              <div id="root" class="container">
+                  <div id="top-nav" class="top-nav">
+                      <div class="icon-back">&lt;</div>
+
+                      <div class="nav-top">返回书架</div>
+                       </div>
+                  <div id="bootom-nav" class="bottom-nav">
+                         <div class="navc">
+                      <div class="icon-align-justify"><p>目录</p></div>
+                      <div class="icon-font"><p>字体</p></div>
+                      <div class="icon-adjust"><p>夜间</p></div>
+                            </div>
+                  </div>
+                  <div id="fition_chapter"></div>
+                  <div id="fiction_container" class="m-read-content">
+                      <h4>text</h4>
+                      <p>
+                          　忽一夜的，八月，桂馥满园，本是香息不醉人的季节，花事廖少，一点素香，穿过水榭楼台，惊醒一枕秋色江南，雕花窗下，小巷柳岸，庭院围墙，簇拥点点金黄，香气扑鼻。
+                          　　
+                          　　采几缕清香沏一壶茶，不觉吟到唐、刘禹锡的一句诗“影近画梁迎晓日，香随绿酒入金杯。”香是香了，醉也是醉了，只是绿酒以茶代之。
+                          　　
+                      </p>
+                      <p>
+                          　忽一夜的，八月，桂馥满园，本是香息不醉人的季节，花事廖少，一点素香，穿过水榭楼台，惊醒一枕秋色江南，雕花窗下，小巷柳岸，庭院围墙，簇拥点点金黄，香气扑鼻。
+                          　　
+                          　　采几缕清香沏一壶茶，不觉吟到唐、刘禹锡的一句诗“影近画梁迎晓日，香随绿酒入金杯。”香是香了，醉也是醉了，只是绿酒以茶代之。
+                          　　
+                      </p>
+                      <p>
+                          　忽一夜的，八月，桂馥满园，本是香息不醉人的季节，花事廖少，一点素香，穿过水榭楼台，惊醒一枕秋色江南，雕花窗下，小巷柳岸，庭院围墙，簇拥点点金黄，香气扑鼻。
+                          　　
+                          　　采几缕清香沏一壶茶，不觉吟到唐、刘禹锡的一句诗“影近画梁迎晓日，香随绿酒入金杯。”香是香了，醉也是醉了，只是绿酒以茶代之。
+                          　　
+                      </p>
+                      <p>
+                          　忽一夜的，八月，桂馥满园，本是香息不醉人的季节，花事廖少，一点素香，穿过水榭楼台，惊醒一枕秋色江南，雕花窗下，小巷柳岸，庭院围墙，簇拥点点金黄，香气扑鼻。
+                          　　
+                          　　采几缕清香沏一壶茶，不觉吟到唐、刘禹锡的一句诗“影近画梁迎晓日，香随绿酒入金杯。”香是香了，醉也是醉了，只是绿酒以茶代之。
+                          　　
+                      </p>
+                      <p>
+                          　忽一夜的，八月，桂馥满园，本是香息不醉人的季节，花事廖少，一点素香，穿过水榭楼台，惊醒一枕秋色江南，雕花窗下，小巷柳岸，庭院围墙，簇拥点点金黄，香气扑鼻。
+                          　　
+                          　　采几缕清香沏一壶茶，不觉吟到唐、刘禹锡的一句诗“影近画梁迎晓日，香随绿酒入金杯。”香是香了，醉也是醉了，只是绿酒以茶代之。
+                          　　
+                      </p>
+                      <p>
+                          　忽一夜的，八月，桂馥满园，本是香息不醉人的季节，花事廖少，一点素香，穿过水榭楼台，惊醒一枕秋色江南，雕花窗下，小巷柳岸，庭院围墙，簇拥点点金黄，香气扑鼻。
+                          　　
+                          　　采几缕清香沏一壶茶，不觉吟到唐、刘禹锡的一句诗“影近画梁迎晓日，香随绿酒入金杯。”香是香了，醉也是醉了，只是绿酒以茶代之。
+                          　　
+                      </p>
+
+                  </div>
+
+                  <div class="m-button-bar">
+                      <ul class="u-tab">
+                          <li id="prev">上一章</li>
+                          <li id="next">下一章</li>
+                      </ul>
+                      <div class="nav-pannel" id="font-contaniner">
+                          <div class="child-mod">
+                              <span>字号</span>
+                              <button id="big" class="font-size">大</button>
+                              <button id="small-font" class="font-size">小</button>
+                          </div>
+                          <div class="child-mod">
+                              <span>背景</span>
+                              <div class="bk-contaniner">
+                                  <div class="bk-container-current"style="background: cadetblue"></div>
+                              </div>
+                              <div class="bk-contaniner">
+                                  <div class="bk-container-current"></div>
+                              </div>
+                              <div class="bk-contaniner">
+                                  <div class="bk-container-current" style="background: coral"></div>
+                              </div>
+                              <div class="bk-contaniner">
+                                  <div class="bk-container-current" style="background: cyan"></div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="nav-pannel-bk"></div>
+                  </div>
+
+              </div>
+		<script src="lib/zepto.min.js"></script>
+		<script>
+			window.jQuery = $;
+		</script>
+		<script src="js/jquery.base64.js"></script>
+		<script src="js/jquery.jsonp.js"></script>
+              <script src="js/jquery.1.10.2.js"></script>
+
+		<script>
+            $(document).ready(function(){
+                var html =("html");
+                var bady1 = $("body");
+                var top = $('#top-nav');
+                var bottomnav =  $(".bottom-nav");
+                var button1 =  $("#big");
+                var button2=$("#small-font");
+                var bk = $(".bk-container-current");
+               $("#fiction_container").click (function(){
+                       top.fadeToggle(1000);
+                       bottomnav.slideToggle(1000);
+                   $(".nav-pannel-bk").fadeOut(1000)
+                   $(".nav-pannel").fadeOut(1000);
+                   });
+               $(".icon-font").click(function(){
+                   $(".nav-pannel").slideToggle(1000);
+                   $(".nav-pannel-bk").slideToggle(1000);
+               });
+                $(".icon-adjust").click(function(){
+                             $("body").toggleClass("black")
+                })
+                button1.click(function(){
+                    $(".m-read-content").css("font-size","16px")
+
+                })
+                button2.click(function(){
+                    $(".m-read-content").css("font-size","12px")
+
+                })
+
+                for(var i=0;i<bk.length;i++){
+                    bk[i].index=i;
+                    bk[i].onclick = function(){
+                        for(var i=0;i<bk.length;i++){
+                          bk[i].style.border = ""}
+                        this.style.border = "1px solid  #000";
+                        var corol = this.style.background;
+                     var body= document.querySelector("body");
+                        body.style.background=corol;
+
+
+                    }
+
+                }
+               $(window).scroll (function(){
+                   top.fadeOut(1000);
+                   bottomnav.fadeOut(1000);
+               })
+
+
+
+            })
+
+		</script>
+	</body>
+</html>
